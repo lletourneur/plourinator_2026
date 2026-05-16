@@ -6,12 +6,12 @@ import HomeSection from '@/components/HomeSection.vue';
 
 <template>
     <div class="flex flex-col">
-        <HomeSection title="Un festival<br/>pas comme les autres" button="Découvrir les activités">
+        <HomeSection title="Un festival<br/>pas comme les autres" button="Découvrir les activités" background="secondary">
             Musique, bières artisanales, jeux délirants et bonne humeur : le plourinator c'est un festival
             local et indépendant créé par des potes pour rassembler une communautée de fêtards bienveillants
             dans un cadre magique. Ici, on déconnecte, on partage et on profite d'un moment unique.
         </HomeSection>
-        <HomeSection title="Voici Plourinator" title2="Protecteur de la forêt et patron des fêtards" button="Infos pratiques" primary revert>
+        <HomeSection title="Voici Plourinator" title2="Protecteur de la forêt et patron des fêtards" button="Infos pratiques" background="primary" revert>
             Mi fée, mi cochon 100% bière artisanale. Il veille sur le festival, la bonne ambiance et les nuits sans fin.
         </HomeSection>
         <div class="photos relative">

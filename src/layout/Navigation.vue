@@ -24,10 +24,10 @@
                         <X :size="32"></X>
                     </div>
                 </div>
-                <div @click="menuItemClick('home')">Accueil</div>
-                <div @click="menuItemClick('activites')">Activités</div>
-                <div @click="menuItemClick('participation')">Participation</div>
-                <div @click="menuItemClick('infos')">Infos pratiques</div>
+                <div @click="menuItemClick('home')" :class="{'text-primary': isHome}">Accueil</div>
+                <div @click="menuItemClick('activites')" :class="{'text-primary': isActivites}">Activités</div>
+                <div @click="menuItemClick('participation')" :class="{'text-primary': isParticipation}">Participation</div>
+                <div @click="menuItemClick('infos')" :class="{'text-primary': isInfos}">Infos pratiques</div>
             </div>
         </div>
     </div>
@@ -48,7 +48,7 @@
                 <span>2026</span>
             </div>
             <div class="flex justify-center items-center mb-20 max-lg:mb-16">
-                <div class="px-8 py-2 uppercase border-2 border-[#A48D55] rounded-lg font-bold
+                <div @click="menuItemClick('participation')" class="px-8 py-2 uppercase border-2 border-[#A48D55] rounded-lg font-bold
                 bg-linear-to-b from-[#FBCE6E] to-[#D9A74D] cursor-pointer flex items-center">
                     <img src="../img/icons/ticket.png" class="w-4 h-4 inline-block mr-3" />participer
                 </div>
