@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col">
     <div class="flex-1">
       <Navigation></Navigation>
-      <RouterView />
+        <RouterView />
     </div>
   </div>
 </template>
