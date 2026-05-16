@@ -9,7 +9,7 @@
                 <div class="my-4">
                     <slot></slot>
                 </div>
-                <Button v-if="button" :primary="primary">{{ button }}</Button>
+                <Button v-if="button" :primary="background === 'primary'">{{ button }}</Button>
             </div>
             <div class="lg:w-1/2">
                 <img src="https://res.cloudinary.com/dhskmqesn/image/upload/v1743015116/qpufmvzcxjovch9psohd.jpg" class="max-h-87.5 w-full object-cover rounded-2xl" />
