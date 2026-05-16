@@ -44,7 +44,7 @@ const props = defineProps({
   },
   background: {
     type: String,
-    required: true
+    required: false
   },
   revert: {
     type: Boolean,
