@@ -4,9 +4,9 @@
       <LoaderCircle class="loader mx-auto"/>
     </div>
     <div v-else class="[&_iframe]:shadow-[10px_10px_20px_0_rgba(0,0,0,0.3)]">
-      <a title="Vente de billets en ligne" href="https://www.billetweb.fr/shop.php?event=plourinator1"
-         class="shop_frame" target="_blank" data-src="https://www.billetweb.fr/shop.php?event=plourinator1"
-         data-max-width="100%" data-initial-height="600" data-scrolling="no" data-id="plourinator1" data-resize="1">
+      <a title="Vente de billets en ligne" href="https://www.billetweb.fr/shop.php?event=plourinator-2026"
+         class="shop_frame" target="_blank" data-src="https://www.billetweb.fr/shop.php?event=plourinator-2026"
+         data-max-width="100%" data-initial-height="600" data-scrolling="no" data-id="plourinator-2026" data-resize="1">
         Vente de billets en ligne
       </a>
     </div>
