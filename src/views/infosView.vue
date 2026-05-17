@@ -25,7 +25,7 @@
       </HomeSection>
       <HomeSection title="Les korrigans veilleront sur ton sommeil" picture="tentes"
                    customClass="max-h-87.5 w-full object-cover object-[50%_60%] rounded-2xl" revert>
-        Pose ta tente ou ton camion pour dormir, tu n'as pas besoin de t'inquieter de prendre le volant. <br/>(NE PREND
+        Pose ta tente ou ton camion pour dormir, tu n'as pas besoin de t'inquiéter de prendre le volant. <br/>(NE PREND
         PAS LE VOLANT SI T'AS BU!)
       </HomeSection>
     </div>

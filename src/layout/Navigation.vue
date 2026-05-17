@@ -39,8 +39,8 @@
                 <span class="text-4xl max-lg:text-xl text-secondary">Dark fairy editioN</span>
             </div>
             <div class="leading-5 text-center text-primary text-xl max-lg:text-lg my-4">
-                <span class="font-bold">Entrez dans la foret interdite..</span>
-                <div class="font-medium">la fête commence a la tombée de la nuit</div>
+                <span class="font-bold">Entrez dans la forêt interdite..</span>
+                <div class="font-medium">la fête commence à la tombée de la nuit</div>
             </div>
             <div class="text-primary font-title font-bold relative flex flex-col items-center justify-center h-32.5 max-lg:h-24 text-3xl max-lg:text-xl mb-2">
                 <img src="../img/branch.png" class="absolute left-1/2 -top-1 h-32.5 max-lg:h-24 -translate-x-1/2"/>
