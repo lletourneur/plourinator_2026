@@ -1,31 +1,36 @@
 <script setup lang="ts">
 import HomeCarousel from '@/components/HomeCarousel.vue';
 import HomeSection from '@/components/HomeSection.vue';
-
 </script>
 
 <template>
-    <div class="flex flex-col">
-        <HomeSection title="Un festival<br/>pas comme les autres" button="Découvrir les activités" background="secondary">
-            Musique, bières artisanales, jeux délirants et bonne humeur : le plourinator c'est un festival
-            local et indépendant créé par des potes pour rassembler une communautée de fêtards bienveillants
-            dans un cadre magique. Ici, on déconnecte, on partage et on profite d'un moment unique.
-        </HomeSection>
-        <HomeSection title="Voici Plourinator" title2="Protecteur de la forêt et patron des fêtards" button="Infos pratiques" background="primary" revert>
-            Mi fée, mi cochon 100% bière artisanale. Il veille sur le festival, la bonne ambiance et les nuits sans fin.
-        </HomeSection>
-        <div class="photos relative">
-            <div class="min-w-full min-h-full bg-[url(../img/green_bg.png)] bg-cover bg-no-repeat absolute -z-10 top-0 left-0"></div>
-            <div class="text-primary font-bold text-4xl max-lg:text-2xl uppercase text-center my-4">Retour en images</div>
-            <div class="container mx-auto mb-8 relative">
-                <HomeCarousel></HomeCarousel>
-            </div>
+  <div class="flex max-lg:flex-col pt-4 relative">
+    <div class="min-w-full h-[calc(100%+80px)] absolute -z-10 -top-20 max-lg:-top-8 left-0 bg-[url(../img/green_bg_full.png)] bg-cover bg-no-repeat
+        max-lg:min-h-screen max-lg:h-auto max-lg:w-screen max-lg:bg-position-[center_top]"></div>
+    <div class="flex flex-col container mx-auto mb-24 max-lg:mb-14">
+      <HomeSection title="Les korrigans s'agitent <br/> dans les bois" button="Découvrir les activités" page="activites" picture="prepa-champ">
+        On commence a entendre courrir le bruit d'un rassemblement de korrigans le deuxième week-end d'âout dans la
+        clairière de Plourinator.
+        Que peuvent bien manigancer ces petits punks ?
+      </HomeSection>
+      <HomeSection title="Tu es inquiet de leurs bétises ?" button="Infos pratiques" page="infos" picture="eenn-serge" revert>
+        Rassure toi, ils prévoient toujours tout pour accueillir les curieux dans les meilleurs conditions !
+      </HomeSection>
+      <HomeSection class="mb-10" title="Le rituel annuel aura sa <br/> nouvelle édition" button="Participation" page="participation" picture="beer-bong">
+        Tu peux d'ores et déjà annoncer ta venu en participant à l'évenement.
+      </HomeSection>
+      <div class="photos relative mt-10">
+        <div class="text-primary font-bold text-4xl max-lg:text-2xl uppercase text-center my-4">Retour en images</div>
+        <div class="container mx-auto mb-8 relative">
+          <HomeCarousel></HomeCarousel>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <style>
-    svg text {
-        text-anchor: middle;
-    }
+svg text {
+  text-anchor: middle;
+}
 </style>
