@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plourinator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: plourinator
+  template:
+    metadata:
+      labels:
+        app: plourinator
+    spec:
+      imagePullSecrets:
+        - name: registry-jolakk
+      containers:
+        - name: plourinator
+          image: registry.jolakk.fr/plourinator
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 64Mi

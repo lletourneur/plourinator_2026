@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: plourinator
+
+resources:
+  - ../../base
+
+images:
+  - name: registry.jolakk.fr/plourinator
+    newTag: 0.0.1
