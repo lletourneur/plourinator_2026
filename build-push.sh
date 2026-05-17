@@ -52,3 +52,11 @@ $DOCKER_CMD push "${IMAGE}:${TAG}"
 
 echo ""
 echo "✓ Pushé sur ${REGISTRY} (tag: ${TAG})"
+
+echo ""
+echo "==> Deploy..."
+kubectl apply -k "${SCRIPT_DIR}/k8s/overlays/prod"
+kubectl rollout status deployment/plourinator -n plourinator
+
+echo ""
+echo "✓ Déployé !"
