@@ -16,7 +16,7 @@ import PageTitle from '@/components/ui/PageTitle.vue';
         Un terrain de badminton / volley sera à disposition, et les korrigans préparent une olympiade, il faudra monter
         une équipe pour prouver ce que tu vaux !
       </HomeSection>
-      <HomeSection title="Jeux de cartes / société" picture="cartes">
+      <HomeSection title="Jeux de cartes / société" picture="cartes" customClass="max-h-87.5 w-full object-cover object-[50%_70%] rounded-2xl">
         Rien de mieux qu'un bon jeu de carte ou de société pour chill et s'amuser entre lutins. N'hésite pas à ramener les tiens!
       </HomeSection>
       <HomeSection title="Blind test" picture="blind-test" customClass="max-h-87.5 w-full object-cover object-[50%_70%] rounded-2xl" revert>

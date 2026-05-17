@@ -8,4 +8,4 @@ resources:
 
 images:
   - name: registry.jolakk.fr/plourinator
-    newTag: 0.0.6
+    newTag: 0.0.7
