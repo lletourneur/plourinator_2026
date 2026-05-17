@@ -16,6 +16,7 @@ TAG="${1:-latest}"
 BUMP="${2:-patch}"
 
 IMAGE="${REGISTRY}/plourinator"
+SERVER="ubuntu@145.239.70.177"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 KUSTOMIZATION="${SCRIPT_DIR}/k8s/overlays/prod/kustomization.yaml"
@@ -54,9 +55,12 @@ echo ""
 echo "✓ Pushé sur ${REGISTRY} (tag: ${TAG})"
 
 echo ""
+echo "==> Sync k8s → serveur..."
+rsync -az "${SCRIPT_DIR}/k8s/" "${SERVER}:/tmp/plourinator-k8s/"
+
 echo "==> Deploy..."
-kubectl apply -k "${SCRIPT_DIR}/k8s/overlays/prod"
-kubectl rollout status deployment/plourinator -n plourinator
+ssh "$SERVER" "/usr/local/bin/kubectl apply -k /tmp/plourinator-k8s/overlays/prod"
+ssh "$SERVER" "/usr/local/bin/kubectl rollout status deployment/plourinator -n plourinator"
 
 echo ""
 echo "✓ Déployé !"
