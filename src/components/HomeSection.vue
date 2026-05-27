@@ -9,7 +9,7 @@
         <div class="my-4">
           <slot></slot>
         </div>
-        <Button v-if="button" :primary="background === 'primary'" @click="clickBtn">{{ button }}</Button>
+        <Button v-if="button" :primary="background === 'primary'" @click="clickBtn">{{ button }} <ChevronRight></ChevronRight></Button>
       </div>
       <div class="lg:w-1/2">
         <img :src="`https://res.cloudinary.com/dhskmqesn/image/upload/v1779026445/${picture}.jpg`"
@@ -23,6 +23,7 @@
 import {computed, defineEmits} from 'vue'
 import Button from './ui/Button.vue';
 import {useRouter} from 'vue-router'
+import { ChevronRight } from 'lucide-vue-next';
 
 const router = useRouter()
 

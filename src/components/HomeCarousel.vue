@@ -3,7 +3,9 @@
     <div v-for="(pic, index) in pics" :key="index" class="embla__slide">
       <img
           :src="`https://res.cloudinary.com/dhskmqesn/image/upload/v1743015116/${pic.url}.jpg`"
-          :class="pic.customClass ?? 'rounded-2xl h-full w-auto object-contain cursor-grab active:cursor-grabbing'"
+          :class="pic.customClass"
+          class="rounded-2xl h-full w-auto object-cover cursor-grab active:cursor-grabbing"
+          height="300"
           alt=""
       />
     </div>

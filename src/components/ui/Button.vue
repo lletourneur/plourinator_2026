@@ -1,16 +1,29 @@
 <template>
     <div class="px-8 py-2 uppercase border-2 rounded-lg font-bold cursor-pointer flex w-fit"
-    :class="primary ? 'text-primary border-primary' : 'text-secondary border-secondary'">
-        <slot></slot> <ChevronRight></ChevronRight>
+    :class="buttonColor">
+        <slot></slot>
     </div>
 </template>
 
 <script setup>
-import { ChevronRight } from 'lucide-vue-next';
+import {computed} from 'vue'
+
+const buttonColor = computed(() => {
+  if (props.color === 'primary')
+    return 'text-primary border-primary'
+
+  if (props.color === 'secondary')
+    return "text-secondary border-secondary"
+
+  if (props.color === 'tertiary')
+    return "text-white border-primary bg-primary"
+
+  return 'text-primary border-primary'
+})
 
 const props = defineProps({
-  primary: {
-    type: Boolean,
+  color: {
+    type: String,
     required: false
   },
 })

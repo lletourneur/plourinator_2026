@@ -1,11 +1,23 @@
 <template>
-    <img @click="menuItemClick('home')" src="../img/logo_text.png" class="absolute left-4 top-4 w-32 max-lg:w-16 cursor-pointer"/>
+    <img @click="menuItemClick('home')" src="../img/logo_text.png" class="absolute left-4 top-4 w-32 max-lg:w-16 cursor-pointer z-60"/>
     <div class="fixed w-full z-50">
         <div class="container m-auto flex justify-end">
-            <div class="bg-white/75 h-16 flex items-center before:bg-linear-to-r relative font-bold text-lg
-            before:from-transparent before:to-white/75 before:content-[''] before:h-full
-            before:w-16 before:absolute before:-translate-x-full
-            after:content-[''] after:h-full after:bg-white/75 after:w-full after:absolute after:translate-x-full max-lg:hidden">
+            <div
+            class="
+                h-16 flex items-center relative font-bold text-lg transition-all duration-500 max-lg:hidden
+
+                before:bg-linear-to-r before:to-white/75 before:from-transparent before:content-[''] before:h-full
+                before:w-16 before:absolute before:-translate-x-full before:transition-opacity before:duration-500
+
+                after:content-[''] after:h-full after:w-full after:absolute after:translate-x-full after:bg-white/75
+                after:transition-opacity after:duration-500
+            "
+
+            :class="scrolled
+                ? 'bg-white/75 before:opacity-100 after:opacity-100'
+                : 'bg-transparent before:opacity-0 after:opacity-0'
+            "
+            >
                 <div @click="menuItemClick('home')" class="flex mx-4 h-8 items-center cursor-pointer" :class="{'border-b-2 border-green-800' : isHome}">Accueil</div>
                 <div @click="menuItemClick('activites')" class="flex mx-4 h-8 items-center cursor-pointer" :class="{'border-b-2 border-green-800' : isActivites}">Activités</div>
                 <div @click="menuItemClick('participation')" class="flex mx-4 h-8 items-center cursor-pointer" :class="{'border-b-2 border-green-800' : isParticipation}">Participation</div>
@@ -48,20 +60,21 @@
                 <span>2026</span>
             </div>
             <div class="flex justify-center items-center mb-20 max-lg:mb-16">
-                <div @click="menuItemClick('participation')" class="px-8 py-2 uppercase border-2 border-[#A48D55] rounded-lg font-bold
-                bg-linear-to-b from-[#FBCE6E] to-[#D9A74D] cursor-pointer flex items-center">
-                    <img src="../img/icons/ticket.png" class="w-4 h-4 inline-block mr-3" />participer
-                </div>
+                <Button color="tertiary" @click="menuItemClick('participation')"><Ticket class="mr-2"></Ticket> Participer</Button>
             </div>
         </div>
-        <img src="../img/logo_self.png" class="w-72 ml-4 max-lg:hidden"/>
+        <div class="absolute top-0 mx-auto container">
+            <img src="../img/logo_self.png" class="absolute right-12 top-42 w-72 max-lg:hidden"/>
+        </div>
     </div>
 </template>
 
 <script setup>
+import Button from '@/components/ui/Button.vue';
 import { X } from 'lucide-vue-next';
+import { Ticket } from 'lucide-vue-next';
 import { Menu } from 'lucide-vue-next';
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router'
 
 const isOpen = ref(false);
@@ -72,6 +85,19 @@ const isHome = computed(() => { return router.currentRoute.value.name === 'home'
 const isActivites = computed(() => { return router.currentRoute.value.name === 'activites' })
 const isParticipation = computed(() => { return router.currentRoute.value.name === 'participation' })
 const isInfos = computed(() => { return router.currentRoute.value.name === 'infos' })
+const scrolled = ref(false)
+
+const handleScroll = () => {
+  scrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
