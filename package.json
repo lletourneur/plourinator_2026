@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.4",
+    "@vueuse/components": "^14.3.0",
+    "@vueuse/core": "^14.3.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-vue": "^8.6.0",
     "lucide-vue-next": "^1.0.0",

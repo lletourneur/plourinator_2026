@@ -2,19 +2,39 @@
   <Carousel class="mx-24">
     <div v-for="(pic, index) in pics" :key="index" class="embla__slide">
       <img
-          :src="`https://res.cloudinary.com/dhskmqesn/image/upload/v1743015116/${pic.url}.jpg`"
-          :class="pic.customClass"
-          class="rounded-2xl h-full w-auto object-cover cursor-grab active:cursor-grabbing"
-          height="300"
-          alt=""
+        @click="openPhotoModal(pic.url)"
+        :src="`https://res.cloudinary.com/dhskmqesn/image/upload/v1743015116/${pic.url}.jpg`"
+        :class="pic.customClass"
+        class="rounded-2xl h-full w-full object-cover cursor-grab active:cursor-grabbing"
+        alt=""
       />
     </div>
   </Carousel>
+  <div v-if="photoIsOpen" class="bg-black/80 fixed top-0 left-0 h-screen w-full z-50" @click="closePhotoModal">
+      <img
+        :src="`https://res.cloudinary.com/dhskmqesn/image/upload/v1743015116/${openPhoto}.jpg`"
+        class="fixed left-0 top-1/2 -translate-y-1/2 w-full max-h-[80vh] object-contain"
+      />
+  </div>
 </template>
 
 <script setup>
 import {ref} from 'vue'
 import Carousel from './ui/carousel/Carousel.vue'
+
+const photoIsOpen = ref(false);
+const openPhoto = ref('');
+
+const openPhotoModal = (photo) => {
+  photoIsOpen.value = true
+  openPhoto.value = photo
+  document.body.style.overflow = 'hidden'
+}
+
+const closePhotoModal = () => {
+  photoIsOpen.value = false
+  document.body.style.overflow = 'auto'
+}
 
 const pics = ref([
   {url: 'IMG_20250809_204404_azxsel', customClass: ''},
